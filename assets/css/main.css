@@ -1,0 +1,2659 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: black;
+  font-family: 'Cinzel', serif;
+  color: white;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/back.jpg');
+  background-size: 600px;
+  background-position: center center;
+  background-attachment: fixed;
+  opacity: 0.1;
+  z-index: -1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+/* ======= HEADER כללי ======= */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* השחור השקוף */
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+/* ======= Navbar כללי ======= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* ======= לוגו בקישור ======= */
+.logo-link {
+  order: 1;
+}
+
+/* ======= עיצוב הלוגו ======= */
+.logo {
+  height: 100px;
+}
+
+/* ======= תפריט ======= */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  order: 2;
+}
+
+.menu li a {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 24px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu li a:hover {
+  transform: scale(1.05);
+}
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
+  background-size: 200% 100%;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu li a:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* ======= כפתור המבורגר (מוסתר בדסקטופ) ======= */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+  order: 3;
+}
+
+/* ======= MOBILE ONLY ======= */
+@media (max-width: 768px) {
+  /* הסתרת הלוגו והרקע השחור */
+  header {
+    background-color: transparent; /* להעלים את הרקע השחור השקוף */
+  }
+
+  .logo-link {
+    display: none; /* הסתרת הלוגו במובייל */
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1101;
+  }
+
+.menu {
+  display: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  flex-direction: column;
+  justify-content: flex-start; /* במקום center */
+  align-items: center;
+  z-index: 1000;
+  padding-top: 80px; /* קצת רווח מלמעלה */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .menu li a {
+    font-size: 28px;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    height: 60px;
+    max-width: 90%;
+    object-fit: contain;
+  }
+}
+
+/* ======= MOBILE ONLY ======= */
+@media (max-width: 480px) {
+  /* הסתרת הלוגו והרקע השחור */
+  header {
+    background-color: transparent; /* להעלים את הרקע השחור השקוף */
+  }
+
+  .logo-link {
+    display: none; /* הסתרת הלוגו במובייל */
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1101;
+  }
+
+.menu {
+  display: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  flex-direction: column;
+  justify-content: flex-start; /* במקום center */
+  align-items: center;
+  z-index: 1000;
+  padding-top: 80px; /* קצת רווח מלמעלה */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .menu li a {
+    font-size: 28px;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    height: 60px;
+    max-width: 90%;
+    object-fit: contain;
+  }
+}
+
+/* ======= DESKTOP ONLY ======= */
+@media (min-width: 769px) {
+  .navbar {
+    flex-direction: row-reverse; /* לוגו מימין, תפריט משמאל */
+    align-items: center;
+  }
+
+  .menu {
+    display: flex !important;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+
+  .logo-link {
+    position: static !important;
+    transform: none !important;
+    z-index: auto;
+  }
+
+  .logo {
+    height: 100px !important;
+  }
+}
+
+/* ======= תיקון ספציפי לרוחב של 1024px ======= */
+@media (max-width: 1024px) {
+  header {
+    background-color: transparent; /* הסרת הרקע השחור */
+  }
+
+  .navbar {
+    flex-direction: row; /* חשוב להשאיר את זה כדי שיהיה סדר טבעי */
+    justify-content: flex-start; /* כדי שההמבורגר יהיה ממש בצד שמאל */
+    position: relative;
+  }
+
+  .hamburger {
+    display: block !important;
+    order: 1;
+    position: fixed; /* כדי שלא יזוז עם הגלילה */
+    top: 10px;
+    left: 10px;
+    z-index: 1101;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .logo-link {
+    display: none !important;
+  }
+
+.menu {
+  display: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  flex-direction: column;
+  justify-content: flex-start; /* במקום center */
+  align-items: center;
+  z-index: 1000;
+  padding-top: 80px; /* קצת רווח מלמעלה */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+  .menu.show {
+    display: flex !important;
+  }
+
+  .menu li {
+    margin: 15px 0;
+  }
+
+  .menu li a {
+    font-size: 28px;
+  }
+}
+/* ======= Desktop (מעל 1024px) ======= */
+@media (min-width: 1025px) {
+  .navbar {
+    flex-direction: row-reverse;
+  }
+
+  .menu {
+    display: flex !important;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+
+  .logo-link {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh; /* גובה מלא של המסך */
+  background-image: url('../img/hero.jpeg');
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 100%; /* רוחב מרבי לתוכן */
+  padding: 20px; /* ריפוד קל למובייל */
+}
+
+/* כותרת ראשית */
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 60px;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* פסקאות */
+.hero p {
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero p:last-of-type {
+  font-size: 24px;
+  margin-bottom: 100px;
+}
+
+/* כפתור CTA */
+.btn-cta {
+  background-color: #ff5500;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* מבטיח שהכפתור יתנהג כמו בלוק במובייל */
+}
+
+.btn-cta:hover {
+  background-color: #ff3300;
+  transform: scale(1.05);
+}
+
+/* התאמות רספונסיביות */
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 40px; /* הקטנת הכותרת */
+    margin-top: 50px; /* הקטנת המרווח העליון */
+  }
+
+  .hero p {
+    font-size: 24px; /* הקטנת הטקסט */
+  }
+
+  .hero p:last-of-type {
+    font-size: 18px;
+    margin-bottom: 50px; /* הקטנת המרווח התחתון */
+  }
+
+  .btn-cta {
+    padding: 12px 25px; /* כפתור קטן יותר */
+    font-size: 16px;
+  }
+}
+
+/* טאבלט ומסכים בינוניים (768px ומטה) */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 40px; /* הקטנת הכותרת */
+    margin-top: 50px; /* הקטנת המרווח העליון */
+  }
+
+  .hero p {
+    font-size: 24px; /* הקטנת הטקסט */
+  }
+
+  .hero p:last-of-type {
+    font-size: 18px;
+    margin-bottom: 50px; /* הקטנת המרווח התחתון */
+  }
+
+  .btn-cta {
+    padding: 12px 25px; /* כפתור קטן יותר */
+    font-size: 16px;
+  }
+}
+
+/* מובייל (480px ומטה) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 32px; /* עוד הקטנה למובייל קטן */
+    margin-top: 30px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .hero p:last-of-type {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .btn-cta {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .hero-content {
+    padding: 15px; /* ריפוד קטן יותר */
+    max-width: 90%; /* מבטיח שהתוכן לא יחתך בקצוות */
+  }
+}
+
+/* מסכים גדולים מאוד (1200px ומעלה) */
+@media (min-width: 1200px) {
+  .hero h1 {
+    font-size: 70px; /* הגדלה קלה למסכים גדולים */
+  }
+
+  .hero p {
+    font-size: 34px;
+  }
+
+  .hero p:last-of-type {
+    font-size: 26px;
+  }
+
+  .btn-cta {
+    padding: 18px 35px;
+    font-size: 20px;
+  }
+}
+
+
+
+
+
+/* About Section */
+.about {
+  display: flex;
+  width: 100%;
+  height: 55vh; /* גובה מוקטן */
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-bottom: -100px;
+}
+
+/* צד שמאל */
+.about-left {
+  width: 50%;
+  background: linear-gradient(to bottom right, rgba(75, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+/* טקסט */
+.about-left .text {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: left; /* יישור לשמאל כברירת מחדל (דסקטופ) */
+  max-width: 600px;
+}
+
+/* כותרות */
+.welcome {
+  font-size: 34px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.welcome::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
+  background-size: 200% 100%;
+}
+
+.loud {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* כפתורים */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+/* עיצוב הכפתור */
+.btn {
+  background-color: #ff5500;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background-color: #ff3300;
+  transform: scale(1.05);
+}
+
+/* צד ימין */
+.about-right {
+  width: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* התאמות למובייל בלבד */
+@media (max-width: 1024px) {
+  .about {
+    flex-direction: column; /* שני החלקים אחד מעל השני */
+    height: auto; /* גובה דינמי */
+    margin-bottom: 0; /* הסרת המרווח השלילי */
+  }
+
+  .about-left {
+    width: 100%;
+    padding: 20px; /* הקטנת הריפוד */
+    align-items: center; /* מרכז את התוכן אנכית */
+    text-align: center; /* יישור הטקסט למרכז במובייל */
+  }
+
+  .about-left .text {
+    font-size: 18px; /* הקטנת הטקסט */
+    max-width: 90%; /* התאמה לרוחב המסך */
+    text-align: center; /* יישור הטקסט למרכז במובייל */
+  }
+
+  .welcome {
+    font-size: 28px; /* הקטנת הכותרת */
+  }
+
+  .loud {
+    font-size: 24px;
+  }
+
+  .buttons {
+    margin-top: 20px;
+    gap: 15px;
+    justify-content: center; /* מרכז את הכפתורים */
+    flex-wrap: wrap; /* מאפשר לכפתורים לרדת לשורה חדשה */
+  }
+
+  .btn {
+    padding: 10px 20px; /* כפתור קטן יותר */
+    font-size: 14px;
+  }
+
+  .about-right {
+    width: 100%;
+    height: 70vh; /* גובה קבוע לתמונה */
+  }
+}
+
+/* התאמות למובייל בלבד */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column; /* שני החלקים אחד מעל השני */
+    height: auto; /* גובה דינמי */
+    margin-bottom: 0; /* הסרת המרווח השלילי */
+  }
+
+  .about-left {
+    width: 100%;
+    padding: 20px; /* הקטנת הריפוד */
+    align-items: center; /* מרכז את התוכן אנכית */
+    text-align: center; /* יישור הטקסט למרכז במובייל */
+  }
+
+  .about-left .text {
+    font-size: 18px; /* הקטנת הטקסט */
+    max-width: 90%; /* התאמה לרוחב המסך */
+    text-align: center; /* יישור הטקסט למרכז במובייל */
+  }
+
+  .welcome {
+    font-size: 28px; /* הקטנת הכותרת */
+  }
+
+  .loud {
+    font-size: 24px;
+  }
+
+  .buttons {
+    margin-top: 20px;
+    gap: 15px;
+    justify-content: center; /* מרכז את הכפתורים */
+    flex-wrap: wrap; /* מאפשר לכפתורים לרדת לשורה חדשה */
+  }
+
+  .btn {
+    padding: 10px 20px; /* כפתור קטן יותר */
+    font-size: 14px;
+  }
+
+  .about-right {
+    width: 100%;
+    height: 40vh; /* גובה קבוע לתמונה */
+  }
+}
+
+/* מובייל קטן (480px ומטה) */
+@media (max-width: 480px) {
+  .about-left {
+    padding: 15px;
+  }
+
+  .about-left .text {
+    font-size: 16px;
+  }
+
+  .welcome {
+    font-size: 24px;
+  }
+
+  .loud {
+    font-size: 20px;
+  }
+
+  .buttons {
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .about-right {
+    height: 30vh; /* גובה קטן יותר */
+  }
+}
+
+
+
+
+
+/* Services Section */
+.services {
+  padding: 80px 20px;
+  background: transparent;
+  text-align: center;
+}
+
+/* כותרת SERVICES */
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  color: white;
+  margin-bottom: 40px;
+  margin-top: 60px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
+  background-size: 200% 100%;
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    display: block; /* מאפשר לקו להימתח על כל הרוחב */
+    text-align: center; /* עדיין ממורכזת */
+  }
+
+  .section-title::after {
+    left: 0;
+    width: 100vw; /* רוחב מלא של המסך */
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-title {
+    display: block; /* מאפשר לקו להימתח על כל הרוחב */
+    text-align: center; /* עדיין ממורכזת */
+  }
+
+  .section-title::after {
+    left: 0;
+    width: 100vw; /* רוחב מלא של המסך */
+  }
+}
+
+.services-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 120px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-left: 200px;
+  margin-right: 80px;
+}
+
+.service-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-family: 'Cinzel', serif;
+  font-size: 30px;
+  color: white;
+  letter-spacing: 1px;
+  line-height: 40px;
+}
+
+.service-item .icon svg {
+  width: 30px !important;
+  height: 30px !important;
+  fill: white;
+}
+
+.service-item .label {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.quote-banner {
+  display: block;
+  width: 100%;
+  margin: 60px 0;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.quote-banner img {
+  width: 100%;
+  height: 100px;
+  border-radius: 0;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-banner:hover img {
+  transform: scale(1.02);
+  cursor: pointer;
+  box-shadow: 0 0 30px 10px rgba(128, 0, 0, 0.6);
+}
+
+/* כפתור שמעל הבאנר */
+.service-list-button {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+
+.btn-service-list {
+  background-color: #ff5500;
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.btn-service-list:hover {
+  background-color: #ff3300;
+  transform: scale(1.05);
+}
+
+
+/* התאמות למובייל בלבד - רק לסקשן הזה */
+@media (max-width: 1024px) {
+  .services {
+    padding: 40px 10px; /* הקטנת הריפוד במובייל */
+  }
+
+  .services .section-title {
+    font-size: 36px; /* הקטנת הכותרת */
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .services .services-list {
+    flex-direction: column; /* עמודות אחת מתחת לשנייה */
+    gap: 0px; /* רווח קטן יותר */
+    margin-left: 0; /* הסרת מרווח שמאלי */
+    margin-right: 0; /* הסרת מרווח ימני */
+    align-items: center; /* מרכז את העמודות */
+  }
+
+  .services .service-column {
+    width: 100%; /* רוחב מלא לכל עמודה */
+    text-align: center; /* יישור למרכז */
+  }
+
+  .services .service-item {
+    font-size: 24px; /* הקטנת הטקסט */
+    gap: 20px; /* רווח קטן יותר בין אייקון לטקסט */
+    line-height: 30px; /* התאמת גובה השורה */
+    justify-content: center; /* מרכז את התוכן */
+  }
+
+  .services .service-item .icon svg {
+    width: 25px !important; /* הקטנת האייקון */
+    height: 25px !important;
+  }
+
+  .services .quote-banner {
+    margin: 30px 0; /* הקטנת המרווח */
+  }
+
+  .services .quote-banner img {
+    height: 80px; /* הקטנת גובה הבאנר */
+  }
+
+  .services .service-list-button {
+    margin-bottom: 15px;
+	margin-top: -20px;
+  }
+
+  .services .btn-service-list {
+    font-size: 20px; /* הקטנת הכפתור */
+    padding: 10px 25px;
+  }
+}
+/* התאמות למובייל בלבד - רק לסקשן הזה */
+@media (max-width: 768px) {
+  .services {
+    padding: 40px 10px; /* הקטנת הריפוד במובייל */
+  }
+
+  .services .section-title {
+    font-size: 36px; /* הקטנת הכותרת */
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .services .services-list {
+    flex-direction: column; /* עמודות אחת מתחת לשנייה */
+    gap: 0px; /* רווח קטן יותר */
+    margin-left: 0; /* הסרת מרווח שמאלי */
+    margin-right: 0; /* הסרת מרווח ימני */
+    align-items: center; /* מרכז את העמודות */
+  }
+
+  .services .service-column {
+    width: 100%; /* רוחב מלא לכל עמודה */
+    text-align: center; /* יישור למרכז */
+  }
+
+  .services .service-item {
+    font-size: 24px; /* הקטנת הטקסט */
+    gap: 20px; /* רווח קטן יותר בין אייקון לטקסט */
+    line-height: 30px; /* התאמת גובה השורה */
+    justify-content: center; /* מרכז את התוכן */
+  }
+
+  .services .service-item .icon svg {
+    width: 25px !important; /* הקטנת האייקון */
+    height: 25px !important;
+  }
+
+  .services .quote-banner {
+    margin: 30px 0; /* הקטנת המרווח */
+  }
+
+  .services .quote-banner img {
+    height: 80px; /* הקטנת גובה הבאנר */
+  }
+
+  .services .service-list-button {
+    margin-bottom: 15px;
+	margin-top: -20px;
+  }
+
+  .services .btn-service-list {
+    font-size: 20px; /* הקטנת הכפתור */
+    padding: 10px 25px;
+  }
+}
+
+/* מובייל קטן (480px ומטה) */
+@media (max-width: 480px) {
+  .services {
+    padding: 30px 5px; /* ריפוד קטן יותר */
+  }
+
+  .services .section-title {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .services .services-list {
+    gap: 0px;
+  }
+
+  .services .service-item {
+    font-size: 20px;
+    gap: 15px;
+    line-height: 25px;
+  }
+
+  .services .service-item .icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .services .quote-banner img {
+    height: 60px; /* גובה קטן יותר */
+  }
+
+  .services .btn-service-list {
+    font-size: 16px;
+    padding: 8px 20px;
+	margin-top: -20px;
+  }
+}
+
+
+
+
+
+.portfolio {
+  padding: 80px 20px; /* ריווח פנימי */
+  background: transparent; /* שקוף – מראה את רקע האתר */
+  text-align: center;
+  margin-top: -230px;
+}
+
+.section-titl {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-titl::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
+  background-size: 200% 100%;
+}
+
+@media (max-width: 480px) {
+  .section-titl {
+    display: block; /* מאפשר לקו להימתח על כל הרוחב */
+    text-align: center; /* עדיין ממורכזת */
+  }
+
+  .section-titl::after {
+    left: 0;
+    width: 100vw; /* רוחב מלא של המסך */
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-titl {
+    display: block; /* מאפשר לקו להימתח על כל הרוחב */
+    text-align: center; /* עדיין ממורכזת */
+  }
+
+  .section-titl::after {
+    left: 0;
+    width: 100vw; /* רוחב מלא של המסך */
+  }
+}
+
+
+/* עיצוב כפתור "TO FULL PORTFOLIO" */
+.btn-portfolio {
+  display: inline-block;
+  margin-top: 20px;  /* ריווח מעל הכפתור */
+  padding: 12px 30px;
+  background-color: #ff5500; /* צבע הכפתור */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Cinzel', serif;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-portfolio:hover {
+  background-color: #ff3300; /* שינוי צבע הכפתור בזמן hover */
+  transform: scale(1.05); /* אפקט זום כאשר עובר מעל הכפתור */
+}
+
+
+/* סקשן ה-Clients */
+.clients {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.clients-title {
+  font-family: 'Cinzel', serif;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.clients-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
+  background-size: 200% 100%;
+}
+
+@media (max-width: 480px) {
+  .clients-title {
+    display: block; /* מאפשר לקו להימתח על כל הרוחב */
+    text-align: center; /* עדיין ממורכזת */
+  }
+
+  .clients-title::after {
+    left: 0;
+    width: 100vw; /* רוחב מלא של המסך */
+  }
+}
+
+@media (max-width: 1024px) {
+  .clients-title {
+    display: block; /* מאפשר לקו להימתח על כל הרוחב */
+    text-align: center; /* עדיין ממורכזת */
+  }
+
+  .clients-title::after {
+    left: 0;
+    width: 100vw; /* רוחב מלא של המסך */
+  }
+}
+
+/* גלריית התמונות */
+.clients-gallery {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* עיצוב כל פריט */
+.client-item {
+  width: 300px; /* תצוגת מחשב – לא משתנה */
+  height: 170px;
+  margin: -64px;
+  margin-top: 0px;
+  padding: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* עיצוב הקישור */
+.client-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0; /* מסיר מרווחים אפשריים מקישורים */
+}
+
+/* עיצוב התמונה */
+.client-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0; /* מסיר גבולות אפשריים */
+}
+
+/* אפקט Hover */
+.client-item:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+
+@media (max-width: 1024px) {
+  /* מרווח מלמעלה כדי לא לעלות על הבאנר הקודם */
+  .portfolio {
+    margin-top: -130px; /* משנה מ-padding-top ל-margin-top */
+    padding-bottom: 60px;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* כותרת PORTFOLIO */
+  .section-titl {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* כפתור PORTFOLIO */
+  .btn-portfolio {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    display: inline-block; /* זה מונע ממנו להתמתח על כל הרוחב */
+  }
+
+  /* CLIENTS SECTION */
+  .clients {
+    margin-top: -20px;
+  }
+
+  .clients-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .clients-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .clients-gallery::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .clients-gallery::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+
+  .client-item {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 100px;
+    margin: 0;
+  }
+
+  .client-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .clients-gallery {
+    flex-direction: row; /* במקום column */
+    flex-wrap: nowrap;   /* לא ירדו שורות */
+    overflow-x: auto;    /* גלילה אופקית אם צריך */
+    padding: 0 5px;
+    gap: 5px;            /* רווח קטן בין התמונות */
+  }
+
+  .client-item {
+    flex: 0 0 auto;      /* גודל קבוע, לא מתרחב */
+    width: 120px;        /* גודל קטן יותר */
+    height: 100px;
+    margin: 0;
+  }
+
+  .section-titl,
+  .clients-title {
+    font-size: 28px;
+  }
+
+  .btn-portfolio {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-gallery {
+    flex-direction: row; /* במקום column */
+    flex-wrap: nowrap;   /* לא ירדו שורות */
+    overflow-x: auto;    /* גלילה אופקית אם צריך */
+    padding: 0 5px;
+    gap: 5px;            /* רווח קטן בין התמונות */
+  }
+
+  .client-item {
+    flex: 0 0 auto;      /* גודל קבוע, לא מתרחב */
+    width: 120px;        /* גודל קטן יותר */
+    height: 100px;
+    margin: 0;
+  }
+
+  .section-titl,
+  .clients-title {
+    font-size: 28px;
+  }
+
+  .btn-portfolio {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+
+
+
+
+
+.staff {
+  display: flex;
+  width: 100%; /* תיקון חשוב - כל רוחב החלון */
+  height: 72vh;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-bottom: -100px;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%); /* ביטול השפעות של קונטיינרים הורים */
+  box-sizing: border-box;
+}
+
+/* צד שמאל - טקסט */
+.staff-left {
+  width: 50%;
+  background: linear-gradient(to bottom right, rgba(75, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.staff-left .text {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 700px;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* צד ימין - תמונה */
+.staff-right {
+  width: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.staff-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (max-width: 1024px) {
+  .staff {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: -55px;
+    width: 100vw;
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+  .staff-left {
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .staff-left .text {
+    font-size: 18px;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .buttons {
+    margin-top: 20px;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* הגדלת גובה התמונה בטאבלטים */
+  .staff-right {
+    width: 100%;
+    height: 70vh; /* שינוי מגובה קודם של 40vh */
+  }
+}
+
+@media (max-width: 768px) {
+  .staff-left .text {
+    font-size: 16px;
+  }
+
+  .staff-right {
+    height: 35vh;
+  }
+}
+
+
+
+/* Contact Section */
+.contact {
+  padding: 40px 20px; /* הקטנתי מ-80px ל-40px */
+  background-color: #efefef; /* HEX #efefef על כל הסקשן */
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px; /* גובה קבוע קטן יותר */
+  box-sizing: border-box; /* מבטיח שה-padding לא יגדיל את הגובה */
+  margin-top:100px;
+}
+
+/* כותרת Get A Quote */
+.contact .section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 36px; /* הקטנתי מ-48px ל-36px */
+  color: #000000;
+  margin-bottom: 20px; /* הקטנתי מ-40px ל-20px */
+  position: relative;
+  display: inline-block;
+}
+
+/* קו תחתון דקורטיבי מתחת ל־Get A Quote */
+.contact .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; /* התאמת הקו לגודל הכותרת הקטן יותר */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, #000000 20%, transparent 60%, #000000 40%);
+  background-size: 200% 100%;
+}
+
+/* עיצוב הטופס */
+.contact-form {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* הקטנתי מ-20px ל-10px */
+}
+
+/* קבוצות שדות */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* תוויות */
+.form-group label {
+  font-family: 'Cinzel', serif;
+  font-size: 18px; /* הקטנתי מ-20px ל-18px */
+  color: #000000;
+  margin-bottom: 3px; /* הקטנתי מ-5px ל-3px */
+  font-weight: 400;
+}
+
+/* שדות קלט */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 8px; /* הקטנתי מ-10px ל-8px */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Cinzel', serif;
+  font-size: 14px; /* הקטנתי מ-16px ל-14px */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  color: #000000;
+}
+
+/* שדה טקסט גדול */
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px; /* הקטנתי מ-120px ל-80px */
+}
+
+/* כפתור Submit */
+.contact-form .btn {
+  background-color: #ff5500;
+  color: white;
+  padding: 10px 20px; /* הקטנתי מ-12px 24px ל-10px 20px */
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Cinzel', serif;
+  font-size: 16px; /* הקטנתי מ-18px ל-16px */
+  transition: background-color 0.3s ease;
+  width: 180px; /* הקטנתי מ-200px ל-180px */
+  margin: 10px auto 20px; /* הקטנתי מ-20px ל-10px ומ-40px ל-20px */
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form .btn:hover {
+  background-color: #ff3300;
+  transform: scale(1.05);
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  .contact {
+    padding: 30px 15px;
+    background-color: #efefef;
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto; /* ביטול גובה קבוע */
+    min-height: 500px;
+    box-sizing: border-box;
+  }
+
+  .contact .section-title {
+    font-size: 28px; /* הקטנת כותרת */
+    margin-bottom: 16px;
+  }
+
+  .contact-form {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group {
+    text-align: left;
+  }
+
+  .form-group label {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .form-group textarea {
+    min-height: 80px;
+  }
+
+  .contact-form .btn {
+    font-size: 14px;
+    width: 160px;
+    padding: 8px 16px;
+    margin: 12px auto 0;
+  }
+}
+
+ 
+
+/* עיצוב כותרת הסקשן */
+.section-title-wrapper {
+  text-align: center;
+  margin: 80px 0 40px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* טקסט ליד התמונה */
+.staff1-text {
+  max-width: 700px;
+  text-align: left;
+  margin-right: 82px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* הקונטיינר של הפלקס – תמונה + פסקה ראשונה */
+.staff1-content {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 40px;
+  direction: rtl;
+}
+
+/* תמונה */
+.staff1-image img {
+  width: 400px;
+   height: 400px;
+   object-fit: cover; 
+  margin-right: 370px;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* הפסקה השנייה שמתחת – נפרסת על כל הרוחב */
+.staff1-fullwidth-text {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 0 70px;
+  text-align: left;
+  direction: ltr;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+.staff1-text p {
+  white-space: normal; /* ודא שאין חיתוך שורות לא תקין */
+  word-wrap: break-word; /* המנע מהטקסט לעבור גבולות */
+}
+
+
+.staff1-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 70px; /* יותר רווח בין התמונות */
+  margin-top: 60px;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* חשוב לרספונסיביות */
+}
+
+.staff1-gallery img {
+  width: 400px;  /* גדול יותר */
+  height: 300px;
+   object-fit: cover; 
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.staff1-gallery img {
+  transition: transform 0.3s ease;
+}
+
+.staff1-gallery img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .staff1-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .staff1-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .staff1-image img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+	margin-left: 100px;
+  }
+
+  .staff1-text {
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .staff1-fullwidth-text {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .staff1-gallery {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .staff1-gallery img {
+    width: 90%;
+    height: auto;
+  }
+}
+
+
+/* טאבלטים – עד 768px */
+@media (max-width: 768px) {
+  .staff1-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .staff1-image img {
+    width: 300px;
+    height: 300px;
+    margin-right: 40px;
+  }
+
+  .staff1-text {
+    margin-right: 0;
+    max-width: 90%;
+  }
+
+  .staff1-gallery {
+    gap: 30px;
+  }
+
+  .staff1-gallery img {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .staff1-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .staff1-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  .staff1-image img {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .staff1-text {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .staff1-fullwidth-text {
+    max-width: 90%;
+    margin: 40px auto 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .staff1-gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .staff1-gallery img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* עיצוב כותרת הסקשן */
+.section-title-wrapper {
+  text-align: center;
+  margin: 80px 0 40px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* טקסט ליד התמונה */
+.lds-text {
+  max-width: 700px;
+  text-align: left;
+  margin-right: 82px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* הקונטיינר של הפלקס – תמונה + פסקה ראשונה */
+.lds-content {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 40px;
+  direction: rtl;
+}
+
+/* תמונה */
+.lds-image img {
+  width: 400px;
+   height: 400px;
+   object-fit: cover; 
+  margin-right: 370px;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* הפסקה השנייה שמתחת – נפרסת על כל הרוחב */
+.lds-fullwidth-text {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 0 70px;
+  text-align: left;
+  direction: ltr;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+.lds-text p {
+  white-space: normal; /* ודא שאין חיתוך שורות לא תקין */
+  word-wrap: break-word; /* המנע מהטקסט לעבור גבולות */
+}
+
+
+.lds-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 70px; /* יותר רווח בין התמונות */
+  margin-top: 60px;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* חשוב לרספונסיביות */
+}
+
+.lds-gallery img {
+  width: 400px;  /* גדול יותר */
+  height: 300px;
+   object-fit: cover; 
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.lds-gallery img {
+  transition: transform 0.3s ease;
+}
+
+.lds-gallery img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .lds-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .lds-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .lds-image img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+	margin-left: 100px;
+  }
+
+  .lds-text {
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .lds-fullwidth-text {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .lds-gallery {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .lds-gallery img {
+    width: 90%;
+    height: auto;
+  }
+}
+
+
+/* טאבלטים – עד 768px */
+@media (max-width: 768px) {
+  .lds-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .lds-image img {
+    width: 300px;
+    height: 300px;
+    margin-right: 40px;
+  }
+
+  .lds-text {
+    margin-right: 0;
+    max-width: 90%;
+  }
+
+  .lds-gallery {
+    gap: 30px;
+  }
+
+  .lds-gallery img {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .lds-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .lds-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  .lds-image img {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .lds-text {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .lds-fullwidth-text {
+    max-width: 90%;
+    margin: 40px auto 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .lds-gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .lds-gallery img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+.logo-slider {
+  overflow: hidden;
+  width: 100%;
+  background: white;
+  padding: 20px 0;
+}
+
+.logo-track {
+  display: flex;
+  gap: 40px; /* מרווחים שווים בין הלוגואים */
+  animation: scroll 40s linear infinite;
+  width: max-content;
+}
+
+.logo-track img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.logo-track img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+/* עיצוב כותרת הסקשן */
+.section1-title-wrapper {
+  text-align: center;
+  margin: 80px 0 40px;
+  margin-top: -50px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* טקסט ליד התמונה */
+.record-text {
+  max-width: 700px;
+  text-align: left;
+  margin-right: 82px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* הקונטיינר של הפלקס – תמונה + פסקה ראשונה */
+.record-content {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 40px;
+  direction: rtl;
+}
+
+/* תמונה */
+.record-image img {
+  width: 400px;
+   height: 400px;
+   object-fit: contain;
+  margin-right: 370px;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* הפסקה השנייה שמתחת – נפרסת על כל הרוחב */
+.record-fullwidth-text {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 0 70px;
+  text-align: left;
+  direction: ltr;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+.record-text p {
+  white-space: normal; /* ודא שאין חיתוך שורות לא תקין */
+  word-wrap: break-word; /* המנע מהטקסט לעבור גבולות */
+}
+
+}
+
+.record-cta {
+  text-align: center;
+  margin: 50px 0 30px;
+  font-family: 'Cinzel', serif;
+}
+
+.record-button {
+    background-color: #ff5500;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* מבטיח שהכפתור יתנהג כמו בלוק במובייל */
+  font-family: 'Cinzel', serif;
+}
+
+.record-button:hover {
+  background-color: #a61c1c;
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .record-button {
+    width: 90%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .record-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .record-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .record-image img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+	margin-left: 100px;
+  }
+
+  .record-text {
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .record-fullwidth-text {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+}
+
+
+
+/* טאבלטים – עד 768px */
+@media (max-width: 768px) {
+  .record-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .record-image img {
+    width: 300px;
+    height: 300px;
+    margin-right: 40px;
+  }
+
+  .record-text {
+    margin-right: 0;
+    max-width: 90%;
+  }
+
+
+}
+
+@media (max-width: 1024px) {
+  .record-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .record-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  .record-image img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .record-text {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .record-fullwidth-text {
+    max-width: 90%;
+    margin: 40px auto 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+}
+
+
+
+
+.services-list a {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* חשוב כדי שכל ה-div בפנים יהיה לחיץ */
+}
+
+.service-column2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  margin-top:-6px;
+}
+
+
+/* קונטיינר כללי */
+#extra-services-wrapper {
+  padding: 60px 30px 40px;
+  background: linear-gradient(to bottom right, rgba(75, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+}
+
+/* שלושת העמודות */
+.extra-services {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  border-left: 1px solid #777;
+  border-right: 1px solid #777;
+  flex-wrap: wrap;
+}
+
+/* עמודה אחת */
+.extra-service-column {
+  flex: 1;
+  padding: 0 20px;
+  color: #fff;
+  border-right: 1px solid #777;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.extra-service-column:last-child {
+  border-right: none;
+}
+
+/* כותרת */
+.extra-service-column h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+/* שחזור הקו כמו בשאר האתר */
+.extra-service-column h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
+  background-size: 200% 100%;
+}
+
+/* טקסט */
+.extra-service-column p {
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+  margin: 0;
+}
+
+/* רספונסיביות – טאבלטים ומובייל */
+@media (max-width: 1024px) {
+  .extra-services {
+    flex-direction: column;
+    border: none;
+    gap: 0;
+  }
+
+  .extra-service-column {
+    border-right: none;
+    border-bottom: 1px solid #777;
+    margin-bottom: 5px; /* צמצום הרווח בין הסקשנים */
+    padding: 6px 0; /* פחות רווח פנימי */
+  }
+
+  .extra-service-column:last-child {
+    border-bottom: none;
+  }
+
+  .extra-service-column h2 {
+    font-size: 24px;
+    margin-bottom: 12px; /* גם את זה טיפה צמצמתי */
+  }
+
+  .extra-service-column h2::after {
+    bottom: -6px;
+  }
+
+  .extra-service-column p {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  #extra-services-wrapper {
+    padding: 0px 20px 30px; /* תקרה קרובה יותר */
+  }
+}
+
+
+
+.portfolio-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.portfolio-image {
+  width: 380px; /* גודל גדול יותר */
+  height: auto; /* גודל יותר רחב */
+  object-fit: contain; /* מציג את כל התמונה */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* משתנה לסמן לחיצה */
+  border-radius: 8px;
+}
+
+.portfolio-image:hover {
+  transform: scale(1.05); /* הגדלת התמונה בעת hover */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* הוספת צללים בעת hover */
+}
+
+
+
+.section-title-wrapper {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title-block {
+  display: inline-block;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+}
+
+.section-title::after {
+    content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
+  background-size: 200% 100%;
+}
+
+
+.section-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem; /* ← גדלנו את הגודל */
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom:15px;
+  position: relative;
+}
+
+.section-subtitle::after {
+    content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 12%;
+  height: 2px;
+  background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
+  background-size: 200% 100%;
+  margin-left: 390px;
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 60px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: -70px;
+}
+
+.track-box {
+  text-align: center;
+}
+
+.track-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.mixing-info {
+  font-size: 1rem;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  max-width: 100%; /* אפשר גם להסיר את ה־max-width לגמרי אם צריך */
+  margin: 10px auto 20px;
+  line-height: 1.6;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* מוסיף "..." אם הטקסט ארוך מדי */
+}
+
+.section2-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem; /* ← גדלנו את הגודל */
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom:15px;
+  position: relative;
+}
+
+.section2-subtitle::after {
+    content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width:8%;
+  height: 2px;
+  background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
+  background-size: 200% 100%;
+  margin-left: 410px;
+}
+
+@media (max-width: 1024px) {
+	.section-title-wrapper {
+		margin-top:-20px;
+	}
+		
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle,
+  .section2-subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .section-subtitle::after,
+  .section2-subtitle::after {
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  .tracks-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px 10px;
+  }
+
+  .mixing-info {
+    font-size: 0.95rem;
+    white-space: normal;
+    text-overflow: unset;
+  }
+}
+
+
+
+
+
+/* Footer Section */
+.footer {
+  padding: 40px 20px; /* ריווח פנימי */
+  background: transparent; /* שקוף כדי לחשוף את רקע האתר */
+  width: 97%; /* שיניתי מ-97% ל-100% כדי להתאים לעיצוב הכללי */
+  text-align: center;
+}
+
+/* תוכן הפוטר */
+.footer-content {
+  max-width: 1200px; /* רוחב מקסימלי תואם לעיצוב האתר */
+  margin: 0 auto; /* ממרכז את התוכן */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* מרכז את הלוגו והטקסט */
+  gap: 15px; /* רווח בין הלוגו לטקסט */
+}
+
+/* לוגו בפוטר */
+.footer-logo {
+  height: 80px; /* גודל קטן יותר מהלוגו ב-Header */
+  width: auto;
+  opacity: 0.7; /* שקיפות קלה כברירת מחדל */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* אפקט מעבר חלק לשקיפות וזום */
+}
+
+/* אפקט Hover ללוגו */
+.footer-logo:hover {
+  opacity: 1; /* הופך לאטום לגמרי ב-Hover */
+  transform: scale(1.1); /* זום קל ב-Hover */
+}
+
+/* אייקונים של רשתות חברתיות - תוספת חדשה */
+.social-icons {
+  display: flex;
+  gap: 20px; /* רווח בין האייקונים */
+}
+
+/* עיצוב האייקונים (SVG) - תוספת חדשה */
+.social-icon {
+  width: 24px; /* גודל קטן לאייקונים */
+  height: 24px;
+  opacity: 0.8; /* שקיפות קלה כברירת מחדל */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* אפקט מעבר חלק */
+}
+
+/* צבע ה-SVG - תוספת חדשה */
+.social-icon svg {
+  fill: white; /* צבע לבן ל-SVG כברירת מחדל */
+  width: 100%; /* מבטיח שה-SVG יתאים לגודל ה-social-icon */
+  height: 100%;
+}
+
+/* אפקט Hover לאייקונים - תוספת חדשה */
+.social-icon:hover {
+  opacity: 1; /* אטום לגמרי ב-Hover */
+  transform: scale(1.2); /* זום קל ב-Hover */
+}
+
+/* טקסט זכויות יוצרים */
+.footer-content p {
+  font-family: 'Cinzel', serif;
+  font-size: 14px; /* גודל קטן יותר כפי שביקשת */
+  color: white; /* לבן תואם לרקע השקוף */
+  margin: 0; /* מסיר מרווחים מיותרים */
+  letter-spacing: 1px; /* תואם לעיצוב התפריט */
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 10px; /* הקטנת ריווח במסכים קטנים */
+	width: 95%;
+  }
+
+  .footer-logo {
+    height: 60px; /* הקטנת הלוגו במסכים קטנים */
+  }
+
+  /* תוספת חדשה לרספונסיביות של האייקונים */
+  .social-icon {
+    width: 20px; /* הקטנת האייקונים */
+    height: 20px;
+  }
+
+  .footer-content p {
+    font-size: 12px; /* הקטנת הטקסט עוד יותר */
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+	width: 94%;
+  }
+
+
+/* כברירת מחדל – מוסתר */
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: #000000d9;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* במסכים עד כולל 1024px – מאפשר לחצן */
+@media (max-width: 1024px) {
+  .scroll-to-top {
+    display: block;
+  }
+}
