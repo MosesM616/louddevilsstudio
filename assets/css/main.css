@@ -3,7 +3,7 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: black;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   color: white;
   box-sizing: border-box;
 }
@@ -69,7 +69,7 @@ header {
 }
 
 .menu li a {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 400;
   color: white;
   text-decoration: none;
@@ -361,7 +361,7 @@ header {
 
 /* כותרת ראשית */
 .hero h1 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 60px;
   margin-top: 100px;
   margin-bottom: 10px;
@@ -540,7 +540,7 @@ header {
 
 /* טקסט */
 .about-left .text {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 20px;
   line-height: 1.8;
   text-align: left; /* יישור לשמאל כברירת מחדל (דסקטופ) */
@@ -751,7 +751,7 @@ header {
 
 /* כותרת SERVICES */
 .section-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 48px;
   color: white;
   margin-bottom: 40px;
@@ -829,7 +829,7 @@ header {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 30px;
   color: white;
   letter-spacing: 1px;
@@ -884,7 +884,7 @@ header {
 .btn-service-list {
   background-color: #ff5500;
   color: white;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 24px;
   text-decoration: none;
   padding: 12px 30px;
@@ -1073,7 +1073,7 @@ header {
 }
 
 .section-titl {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 48px;
   color: white;
   margin-bottom: 40px;
@@ -1126,7 +1126,7 @@ header {
   color: white;
   text-decoration: none;
   font-size: 18px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
@@ -1144,7 +1144,7 @@ header {
 }
 
 .clients-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 36px;
   color: white;
   margin-bottom: 40px;
@@ -1385,7 +1385,7 @@ header {
 }
 
 .review-text {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 18px;
   color: white;
   margin: 0 0 10px 0;
@@ -1393,7 +1393,7 @@ header {
 }
 
 .review-artist {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   margin: 0 0 10px 0;
@@ -1469,7 +1469,7 @@ header {
 }
 
 .staff-left .text {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 18px;
   line-height: 1.6;
   text-align: left;
@@ -1589,7 +1589,7 @@ header {
 
 /* כותרת Get A Quote */
 .contact .section-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 36px; /* הקטנתי מ-48px ל-36px */
   color: #000000;
   margin-bottom: 20px; /* הקטנתי מ-40px ל-20px */
@@ -1627,7 +1627,7 @@ header {
 
 /* תוויות */
 .form-group label {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 18px; /* הקטנתי מ-20px ל-18px */
   color: #000000;
   margin-bottom: 3px; /* הקטנתי מ-5px ל-3px */
@@ -1641,7 +1641,7 @@ header {
   padding: 8px; /* הקטנתי מ-10px ל-8px */
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 14px; /* הקטנתי מ-16px ל-14px */
   width: 100%;
   box-sizing: border-box;
@@ -1664,7 +1664,7 @@ header {
   text-decoration: none;
   border-radius: 10px; /* תואם לכפתורים האחרים */
   font-size: 19px; /* תואם לכפתורים האחרים */
-  font-family: 'Raleway', sans-serif; /* גופן רוקי */
+  font-family: 'Playfair Display', serif;
   transition: transform 0.4s ease; /* מעבר חלק להגדלה בלבד */
   margin: 0 auto;
   text-align: center;
@@ -1748,7 +1748,7 @@ header {
 
 /* כותרת STAFF */
 .section-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 48px;
   font-weight: 700;
   color: #fff;
@@ -1983,7 +1983,7 @@ header {
 }
 
 .section-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 48px;
   font-weight: 700;
   color: #fff;
@@ -2240,7 +2240,7 @@ header {
 
 /* כותרת SERVICES */
 .section-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 48px;
   color: white;
   margin-bottom: 40px;
@@ -2320,7 +2320,7 @@ header {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 30px;
   color: white;
   letter-spacing: 1px;
@@ -2476,7 +2476,7 @@ header {
 
 /* עיצוב הכותרת */
 .section-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 48px;
   font-weight: 700;
   color: #fff;
@@ -2572,7 +2572,7 @@ header {
   text-decoration: none;
   border-radius: 10px;
   font-size: 19px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   transition: transform 0.4s ease;
   margin: 10px;
   text-align: center;
@@ -2598,7 +2598,7 @@ header {
   text-decoration: none;
   border-radius: 10px;
   font-size: 19px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   transition: transform 0.4s ease;
   margin: 10px;
 
@@ -2777,7 +2777,7 @@ header {
 
 /* כותרת */
 .extra-service-column h2 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 28px;
   color: #fff;
   text-align: center;
@@ -2881,7 +2881,7 @@ header {
 }
 
 .section-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   text-transform: uppercase;
   margin: 0;
@@ -2901,7 +2901,7 @@ header {
 
 
 .section-subtitle {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.8rem; /* ← גדלנו את הגודל */
   text-transform: uppercase;
   margin-top: 15px;
@@ -2936,7 +2936,7 @@ header {
 }
 
 .track-title {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -2944,7 +2944,7 @@ header {
 
 .mixing-info {
   font-size: 1rem;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   text-align: center;
   max-width: 100%; /* אפשר גם להסיר את ה־max-width לגמרי אם צריך */
   margin: 10px auto 20px;
@@ -2956,7 +2956,7 @@ header {
 }
 
 .section2-subtitle {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.8rem; /* ← גדלנו את הגודל */
   text-transform: uppercase;
   margin-top: 15px;
@@ -3024,7 +3024,7 @@ header {
 }
 
 .section3-subtitle {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.8rem; /* ← גדלנו את הגודל */
   text-transform: uppercase;
   margin-top: 15px;
@@ -3093,7 +3093,7 @@ header {
   text-decoration: none;
   border-radius: 10px;
   font-size: 19px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   transition: transform 0.4s ease; /* מעבר להגדלה */
   margin: 0 auto;
   text-align: center;
@@ -3240,7 +3240,7 @@ header {
 
 /* טקסט זכויות יוצרים */
 .footer-content p {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 14px; /* גודל קטן יותר כפי שביקשת */
   color: white; /* לבן תואם לרקע השקוף */
   margin: 0; /* מסיר מרווחים מיותרים */
