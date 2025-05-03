@@ -1549,7 +1549,7 @@ header {
 }
 
 .payment-logo-img{
-	margin-right: 100px;
+	margin-right: 60px;
 	width: 15%;
 }
 
@@ -1558,7 +1558,7 @@ header {
 }
 
 .payment-logo-img3{
-	margin-left: 100px;
+	margin-left: 60px;
 	width: 15%;
 }
 
@@ -1566,12 +1566,16 @@ header {
 	.payment-logo-img{
 		margin-left:60px;
 	width: 20%;
-	
 }
 
 .payment-logo-img2{
 	width: 15%;
 	margin-right:60px;
+}
+
+.payment-logo-img3{
+	margin-left: 60px;
+	width: 15%;
 }
 }
 
