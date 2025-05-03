@@ -1555,11 +1555,11 @@ header {
 
 .payment-logo-img2{
 	width: 10%;
+	margin-right: 60px;
 }
 
 .payment-logo-img3{
-	margin-left: 60px;
-	width: 15%;
+	width: 10%;
 }
 
 @media (max-width: 1024px) {
