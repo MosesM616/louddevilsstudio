@@ -1442,7 +1442,7 @@ header {
 .staff {
   display: flex;
   width: 100%; /* תיקון חשוב - כל רוחב החלון */
-  height: 72vh;
+  height: 62vh;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   margin-bottom: -100px;
