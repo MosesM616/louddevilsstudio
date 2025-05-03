@@ -463,7 +463,7 @@ header {
     padding: 12px 28px;
     font-size: 17px;
     border-radius: 8px;
-    background: #ff5500; /* רקע אדום קבוע */
+    background: #1d75ae; /* רקע אדום קבוע */
   }
   .btn-cta::before {
     content: none; /* הסר אפקט מילוי */
@@ -499,7 +499,7 @@ header {
   .btn-cta {
     padding: 10px 20px;
     font-size: 14px;
-    background: #a90d10; /* רקע אדום קבוע */
+    background: #1d75ae; /* רקע אדום קבוע */
   }
   .btn-cta::before {
     content: none; /* הסר אפקט מילוי */
@@ -882,7 +882,7 @@ header {
 }
 
 .btn-service-list {
-  background-color: #ff5500;
+  background-color: #1d75ae;
   color: white;
   font-family: 'Playfair Display', serif;
   font-size: 24px;
@@ -1122,7 +1122,7 @@ header {
   display: inline-block;
   margin-top: 20px;  /* ריווח מעל הכפתור */
   padding: 12px 30px;
-  background-color: #ff5500; /* צבע הכפתור */
+  background-color: #1d75ae; /* צבע הכפתור */
   color: white;
   text-decoration: none;
   font-size: 18px;
