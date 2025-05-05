@@ -1,0 +1,79 @@
+/* language-flags.css */
+:root {
+  --flag-desktop-width: 50px;
+  --flag-desktop-height: 25px;
+  --flag-mobile-width: 36px;
+  --flag-mobile-height: 18px;
+}
+
+/* דגלים בדסקטופ */
+.language-switch-desktop {
+  position: fixed !important;
+  bottom: 80px !important; /* מעל כפתור הווצאפ */
+  left: 20px !important;
+  z-index: 999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.language-switch-desktop a img {
+  width: var(--flag-desktop-width) !important;
+  height: var(--flag-desktop-height) !important;
+  max-width: var(--flag-desktop-width) !important;
+  max-height: var(--flag-desktop-height) !important;
+  object-fit: cover !important;
+  border: 1px solid #fff !important;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4) !important;
+  border-radius: 50% !important;
+  transition: transform 0.2s ease !important;
+}
+
+.language-switch-desktop a img:hover {
+  transform: scale(1.05) !important;
+}
+
+/* דגלים במובייל */
+.language-switch-mobile {
+  position: fixed !important;
+  top: 10px !important;
+  right: 60px !important; /* ליד כפתור הווצאפ */
+  z-index: 1101 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.language-switch-mobile a img {
+  width: var(--flag-mobile-width) !important;
+  height: var(--flag-mobile-height) !important;
+  max-width: var(--flag-mobile-width) !important;
+  max-height: var(--flag-mobile-height) !important;
+  object-fit: cover !important;
+  border: 1px solid #fff !important;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3) !important;
+  border-radius: 50% !important;
+}
+
+/* הסתרת הדגלים לפי מדיה */
+@media (max-width: 1024px) {
+  .language-switch-desktop {
+    display: none !important;
+  }
+  .language-switch-mobile {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .language-switch-mobile {
+    display: none !important;
+  }
+  .language-switch-desktop {
+    display: flex !important;
+  }
+}
