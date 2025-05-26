@@ -562,6 +562,69 @@ header {
 
 
 
+.image-section {
+  width: 90%;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  width: 50%;
+  max-width: 800px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* 🌐 רספונסיביות מלאה */
+
+/* טלפונים קטנים (עד 480px) */
+@media (max-width: 480px) {
+  .image-container {
+    width: 90%;
+  }
+}
+
+/* טלפונים רגילים וטאבלטים קטנים (481px - 768px) */
+@media (max-width: 768px) {
+  .image-container {
+    width: 85%;
+  }
+}
+
+/* טאבלטים ומסכים בינוניים (769px - 1024px) */
+@media (max-width: 1024px) {
+  .image-container {
+    width: 75%;
+  }
+}
+
+/* מסכים רחבים מאוד (טלוויזיות ומסכי 4K) */
+@media (min-width: 1600px) {
+  .image-container {
+    width: 40%;
+  }
+}
+
+
+
+
+
+
+
+
 
 /* About Section */
 .about {
