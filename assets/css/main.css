@@ -1269,7 +1269,7 @@ header {
   position: absolute;
   bottom: -10px;
   left: 0;
-  width: 100%;
+  width: 100%; /* הקו תואם את רוחב הכותרת במחשב */
   height: 2px;
   background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
   background-size: 200% 100%;
@@ -1279,18 +1279,17 @@ header {
 .clients-gallery {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
-  gap: 20px;
 }
 
 /* עיצוב כל פריט */
 .client-item {
-  width: 300px;
+  width: 300px; /* תצוגת מחשב – לא משתנה */
   height: 170px;
-  margin: 0;
+  margin: -64px;
+  margin-top: 0px;
   padding: 0;
   border-radius: 5px;
   overflow: hidden;
@@ -1305,7 +1304,7 @@ header {
   height: 100%;
   margin: 0;
   padding: 0;
-  line-height: 0;
+  line-height: 0; /* מסיר מרווחים אפשריים מקישורים */
 }
 
 /* עיצוב התמונה */
@@ -1316,7 +1315,7 @@ header {
   display: block;
   margin: 0;
   padding: 0;
-  border: 0;
+  border: 0; /* מסיר גבולות אפשריים */
 }
 
 /* אפקט Hover */
@@ -1367,22 +1366,36 @@ header {
   }
 
   .clients-gallery {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
     padding: 10px;
+    gap: 10px;
+  }
+
+  .clients-gallery::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .clients-gallery::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
   }
 
   .client-item {
-    width: 30%;
-    height: auto;
+    flex: 0 0 auto;
+    width: 120px;
+    height: 100px;
     margin: 0;
   }
 
   .client-item img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
   }
 }
@@ -1390,21 +1403,18 @@ header {
 /* מדיה קוורי למסכים עד 768px */
 @media (max-width: 768px) {
   .clients-gallery {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 5px;
+    gap: 5px;
   }
 
   .client-item {
-    width: 30%;
-    height: auto;
+    flex: 0 0 auto;
+    width: 120px;
+    height: 100px;
     margin: 0;
-  }
-
-  .client-item img {
-    width: 100%;
-    height: auto;
   }
 
   .section-titl,
@@ -1432,30 +1442,33 @@ header {
   }
 
   .clients-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    overflow-x: visible;
-    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* שלוש תמונות בשורה */
     gap: 10px;
+    padding: 0 10px;
+    overflow: visible; /* ביטול הגלילה האופקית */
+    justify-items: center;
   }
 
   .client-item {
-    width: 30%;
-    height: auto;
+    width: 90px;
+    height: 70px;
     margin: 0;
   }
 
   .client-item img {
-    width: 100%;
-    height: auto;
     object-fit: contain;
+    border-radius: 5px;
   }
 
   .section-titl,
   .clients-title {
     font-size: 28px;
+  }
+
+  .btn-portfolio {
+    font-size: 16px;
+    padding: 10px 20px;
   }
 }
 
