@@ -1279,7 +1279,7 @@ header {
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  margin-bottom: 60px;	
+  margin-bottom: 60px;
   padding: 0;
 }
 
@@ -1365,6 +1365,7 @@ header {
     scroll-behavior: smooth;
     padding: 10px;
     gap: 10px;
+	margin-bottom: -30px;
   }
 
   .clients-gallery::-webkit-scrollbar {
