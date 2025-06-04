@@ -1291,6 +1291,7 @@ header {
   z-index: 1;
 }
 
+/* טאבלטים */
 @media (max-width: 1024px) {
   .portfolio {
     margin-top: -130px;
@@ -1362,41 +1363,43 @@ header {
   }
 }
 
-/* עדכון לגלריה בטלפונים - ביטול סליידר ופריסה של 3 בעמודה ו3 בשורה */
+/* תצוגת מובייל - גריד של 3 פריטים בשורה */
 @media (max-width: 480px) {
   .clients-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    overflow: visible;  /* ביטול גלילה אופקית */
+    grid-template-columns: repeat(3, 1fr); /* 3 בשורה */
+    gap: 10px;
     padding: 0 10px;
+    overflow: visible; /* אין גלילה */
+    justify-items: center;
   }
 
   .client-item {
-    width: 90px;   /* הקטנה יחסית */
+    width: 90px;
     height: 70px;
-    margin: 0;  /* ביטול המרווח השלילי */
+    margin: 0;
   }
 
   .client-item img {
-    object-fit: contain;  /* שומר על היחס */
+    object-fit: contain;
     border-radius: 5px;
   }
 
-  .section-titl,
-  .clients-title {
+  .clients-title,
+  .section-titl {
     font-size: 28px;
-  }
-
-  .btn-portfolio {
-    font-size: 16px;
-    padding: 10px 20px;
+    text-align: center;
   }
 
   .clients-title::after {
     width: 100vw;
     right: 50%;
     transform: translateX(50%);
+  }
+
+  .btn-portfolio {
+    font-size: 16px;
+    padding: 10px 20px;
   }
 }
 
