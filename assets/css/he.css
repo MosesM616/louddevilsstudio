@@ -1362,19 +1362,25 @@ header {
   }
 }
 
-@media (max-width: 768px), (max-width: 480px) {
+/* עדכון לגלריה בטלפונים - ביטול סליידר ופריסה של 3 בעמודה ו3 בשורה */
+@media (max-width: 480px) {
   .clients-gallery {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 0 5px;
-    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    overflow: visible;  /* ביטול גלילה אופקית */
+    padding: 0 10px;
   }
 
   .client-item {
-    flex: 0 0 auto;
-    width: 120px;
-    height: 100px;
+    width: 90px;   /* הקטנה יחסית */
+    height: 70px;
+    margin: 0;  /* ביטול המרווח השלילי */
+  }
+
+  .client-item img {
+    object-fit: contain;  /* שומר על היחס */
+    border-radius: 5px;
   }
 
   .section-titl,
@@ -1393,6 +1399,7 @@ header {
     transform: translateX(50%);
   }
 }
+
 
 /* ביקורות */
 .reviews-container {
