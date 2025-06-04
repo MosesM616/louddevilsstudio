@@ -1269,7 +1269,7 @@ header {
   position: absolute;
   bottom: -10px;
   left: 0;
-  width: 100%; /* הקו תואם את רוחב הכותרת במחשב */
+  width: 100%;
   height: 2px;
   background-image: linear-gradient(to right, white 20%, transparent 60%, white 40%);
   background-size: 200% 100%;
@@ -1280,16 +1280,16 @@ header {
   display: flex;
   justify-content: center;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 60px auto; /* מרווח מתחת לגלריה */
   padding: 0;
+  flex-wrap: wrap; /* כדי למנוע גלילה במובייל ולהכין לקריאה של flex-basis בשורות */
+  gap: 20px;
 }
 
 /* עיצוב כל פריט */
 .client-item {
-  width: 300px; /* תצוגת מחשב – לא משתנה */
+  width: 300px;
   height: 170px;
-  margin: -64px;
-  margin-top: 0px;
   padding: 0;
   border-radius: 5px;
   overflow: hidden;
@@ -1304,7 +1304,7 @@ header {
   height: 100%;
   margin: 0;
   padding: 0;
-  line-height: 0; /* מסיר מרווחים אפשריים מקישורים */
+  line-height: 0;
 }
 
 /* עיצוב התמונה */
@@ -1315,7 +1315,7 @@ header {
   display: block;
   margin: 0;
   padding: 0;
-  border: 0; /* מסיר גבולות אפשריים */
+  border: 0;
 }
 
 /* אפקט Hover */
